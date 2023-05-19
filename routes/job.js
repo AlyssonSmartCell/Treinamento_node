@@ -7,6 +7,8 @@ const router  = express.Router();
 // importando o modelo de trabalho
 const Job     = require('../models/Job')
 
+
+//rota de teste 
 router.get('/teste', (req, res) =>{
     res.send('deu certo ')
 });
