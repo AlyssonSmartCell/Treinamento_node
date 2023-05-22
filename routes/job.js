@@ -13,6 +13,21 @@ router.get('/teste', (req, res) =>{
     res.send('deu certo ')
 });
 
+//detalhe da vaga
+router.get('/view/:id', (req, res) => Job.findOne({
+        where: {id: req.params.id}
+    })
+    .then(job =>{
+        res.render('view', {
+            job
+        });
+    }).catch(err => console.log(err)))
+
+//rota de busca do form add
+router.get('/add', (req, res) =>{
+    res.render('add');
+});
+
 
 
 //adcionando o Job via post 
